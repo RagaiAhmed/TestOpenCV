@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 # First we read the image
-img = cv2.imread("test3.png")
+img = cv2.imread("Examples/test3.png")
 # Here we check if we've read the image right as if we don't the ode won't run
 if img is not None:
     # Those are the counts of the shapes

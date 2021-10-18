@@ -37,7 +37,7 @@ def get_contours(img):
 
 
 # First we read the image
-img = cv2.imread('test2.png')
+img = cv2.imread('Examples/test2.png')
 # we make a copy to draw the contours on it.
 imgContour = img.copy()
 # We convert it to greyScale to apply the GaussianBlur on it.
