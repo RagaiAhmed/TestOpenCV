@@ -33,14 +33,14 @@ for contour in contours:
   
     # here we are ignoring first counter because 
     # findcontour function detects whole image as shape
-    if i == 0:
-        i = 1
+    if i  == 0 or cv2.contourArea(contour) >= 15*1000:
+        i =1 
         continue
 
   
     # cv2.approxPloyDP() function to approximate the shape
     approx = cv2.approxPolyDP(
-        contour, 0.009 * cv2.arcLength(contour, True), True)
+        contour, 0.01 * cv2.arcLength(contour, True), True)
       
 
     # using drawContours() function
@@ -66,19 +66,19 @@ for contour in contours:
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 255), 2)
   
     elif len(approx) == 4:
-        cv2.putText(img, 'Quadrilateral', (x, y),
+        cv2.putText(img, 'Quad', (x, y),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 255), 2)
   
     elif len(approx) == 5:
-        cv2.putText(img, 'Pentagon', (x, y),
+        cv2.putText(img, 'Penta', (x, y),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 255), 2)
   
     elif len(approx) == 6:
-        cv2.putText(img, 'Hexagon', (x, y),
+        cv2.putText(img, 'Hexa', (x, y),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 255), 2)
   
     else:
-        cv2.putText(img, 'circle'+ str(len(approx)), (x, y),
+        cv2.putText(img, 'circle', (x, y),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 255), 2)
   
 # displaying the image after drawing contours
