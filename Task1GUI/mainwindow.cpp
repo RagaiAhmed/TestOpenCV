@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -13,3 +14,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_onButton_clicked()
+{
+    QMessageBox::information(this,"Title",ui->lineEditRed->text() + ui->lineEditBlue->text());
+}
