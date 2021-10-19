@@ -39,7 +39,6 @@ for contour in contours:
     elif len(approx) == 4:
         x1, y1, w, h = cv.boundingRect(approx)
         aspectRatio = float(w) / h
-        print(aspectRatio)
         if aspectRatio >= 0.95 and aspectRatio <= 1.05:
             cv.putText(img, "Square", (x, y), cv.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 0))
         else:
