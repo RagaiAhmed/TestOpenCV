@@ -16,37 +16,49 @@ void setup()
 
 void loop()
 {
-  if (Serial.available()){
+  if (Serial.available()) {
     char led_specifier = Serial.read();
     int led_blink_speed = Serial.parseInt();
-    write_leds(led_specifier, led_blink_speed);
+    control_leds(led_specifier, led_blink_speed);
+    //Serial.println(led_specifier);
+    //Serial.println(led_blink_speed);
   }
+  blinkk();
 }
 
-void write_leds(char led, int speedd)
+void control_leds(char led, int speedd)
 {
-  if (led == 'r'){
+  if (led == 'r') {
     red = true;
     red_speed = speedd;
   }
-  if (red == true){
-    digitalWrite(red_led,HIGH);
-    delay(red_speed);
-    digitalWrite(red_led,LOW);
-    delay(red_speed);
-  }
-  
-  if (led == 'b'){
+
+
+  if (led == 'b') {
     blue = true;
     blue_speed = speedd;
   }
-  
-  if (blue == true){
-    digitalWrite(blue_led,HIGH);
+
+  else if (led == 's') {
+    red = false;
+    blue = false;
+  }
+
+
+}
+
+void blinkk() {
+  if (red == true) {
+    digitalWrite(red_led, HIGH);
+    delay(red_speed);
+    digitalWrite(red_led, LOW);
+    delay(red_speed);
+  }
+
+  if (blue == true) {
+    digitalWrite(blue_led, HIGH);
     delay(blue_speed);
-    digitalWrite(blue_led,LOW);
+    digitalWrite(blue_led, LOW);
     delay(blue_speed);
   }
-  
-  return;
 }
