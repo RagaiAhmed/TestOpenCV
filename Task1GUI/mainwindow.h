@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtSerialPort/QSerialPort>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,7 +19,14 @@ public:
 private slots:
     void on_onButton_clicked();
 
+    void on_offButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    QSerialPort *arduino;
+    static const quint16 arduino_uno_vendor_id = 9025;
+    static const quint16 arduino_uno_product_id = 67;
+    QString arduino_port_name;
+    bool arduino_is_available;
 };
 #endif // MAINWINDOW_H
