@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 i = 0
-img = cv2.imread('test2.png')
+img = cv2.imread('test1.png')
 scale_percent = 50
 width = int(img.shape[1] * scale_percent / 100)
 height = int(img.shape[0] * scale_percent / 100)
