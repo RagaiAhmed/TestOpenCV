@@ -65,7 +65,7 @@ for cont5 in Grey_contours:
 
 for contour in contours:
     approx = cv2.approxPolyDP(contour, 0.01 * cv2.arcLength(contour, True), True)
-    cv2.drawContours(img, [approx], 0, 0, 3)
+    #cv2.drawContours(img, [approx], 0, 0, 3)
     x = approx.ravel()[0] + 5
     y = approx.ravel()[1] - 5
     if len(approx) == 3:
