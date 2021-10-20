@@ -1,3 +1,5 @@
+import cv2
+import numpy as np
 
 # reading image
 img = cv2.imread('test1.png')
