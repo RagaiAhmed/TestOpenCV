@@ -3,9 +3,16 @@
 
 boolean red = false;
 boolean blue = false;
+boolean redStatue = true;
+boolean blueStatue = true;
 
 int red_speed;
 int blue_speed;
+
+int previousMillisRed;
+int currentMillisRed;
+int previousMillisBlue;
+int currentMillisBlue;
 
 void setup()
 {
@@ -20,8 +27,9 @@ void loop()
     char led_specifier = Serial.read();
     int led_blink_speed = Serial.parseInt();
     control_leds(led_specifier, led_blink_speed);
-    //Serial.println(led_specifier);
-    //Serial.println(led_blink_speed);
+
+    previousMillisRed = millis();
+    previousMillisBlue = millis();
   }
   blinkk();
 }
@@ -42,23 +50,34 @@ void control_leds(char led, int speedd)
   else if (led == 's') {
     red = false;
     blue = false;
+    digitalWrite(red_led, LOW);
+    digitalWrite(blue_led, LOW);
+     redStatue = true;
+     blueStatue = true;
   }
 
 
 }
 
 void blinkk() {
-  if (red == true) {
-    digitalWrite(red_led, HIGH);
-    delay(red_speed);
-    digitalWrite(red_led, LOW);
-    delay(red_speed);
+  if (red == true && blue == true) {
+
+    digitalWrite(red_led, redStatue);
+    currentMillisRed = millis();
+    
+    if (currentMillisRed - previousMillisRed >= red_speed) {
+      previousMillisRed = currentMillisRed;
+      redStatue = !redStatue;
+    }
+
+    digitalWrite(blue_led, blueStatue);
+    currentMillisBlue = millis();
+    
+    if (currentMillisBlue - previousMillisBlue >= blue_speed) {
+      previousMillisBlue = currentMillisBlue;
+      blueStatue = !blueStatue;
+    }
+
   }
 
-  if (blue == true) {
-    digitalWrite(blue_led, HIGH);
-    delay(blue_speed);
-    digitalWrite(blue_led, LOW);
-    delay(blue_speed);
-  }
 }
