@@ -6,6 +6,10 @@ int red_time;
 int blue_time;
 int r = 0, b = 0;
 
+long timer;
+long r_timer;
+long b_timer;
+
 void setup() {
   // put your setup code here, to run once:
   pinMode(red, OUTPUT);
@@ -22,8 +26,8 @@ void loop() {
     
     if(message == "S")
     {
-      digitalWrite(red, LOW);
-      digitalWrite(blue, LOW);
+      r_timer = 0;
+      b_timer = 0;
     }
     else
     {
@@ -41,16 +45,41 @@ void loop() {
       }
       red_time = message.substring(r+1, b).toInt();
       blue_time = message.substring(b + 1, message.length()).toInt();
+
       Serial.println(red_time);
-      Serial.println(blue_time);
-      digitalWrite(blue, HIGH);
-      digitalWrite(red, HIGH);
       
-      delay(red_time);
-      digitalWrite(red, LOW);
-      delay(blue_time);
-      digitalWrite(blue, LOW);
+      r_timer = millis();
+      Serial.println(r_timer);
+      b_timer = millis();
     }
     
   }
+  if((red_time > 0) && (blue_time > 0))
+  {
+    if ((timer - r_timer >= red_time) && red_time > 0){
+    r_timer = millis();
+    Serial.print("timer: ");
+    Serial.println(r_timer);
+    Serial.print("\ttime: ");
+    Serial.println(red_time);
+    
+    digitalWrite(red, !(digitalRead(red)));
+  }
+
+  if ((timer - b_timer >= blue_time) && blue_time > 0){
+    b_timer = millis();
+    Serial.print("timer: ");
+    Serial.println(b_timer);
+    Serial.print("\ttime: ");
+    Serial.println(blue_time);
+    
+    digitalWrite(blue, !(digitalRead(blue)));
+  }
+  }
+  else
+  {
+    digitalWrite(red, LOW);
+    digitalWrite(blue, LOW);
+  }
+  timer = millis();
 }
