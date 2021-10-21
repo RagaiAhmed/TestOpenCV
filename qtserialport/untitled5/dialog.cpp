@@ -71,30 +71,26 @@ Dialog::~Dialog()
 
 void Dialog::on_pushButton_clicked()
 {
-    QString str = ui->lineEdit->text();
-    Dialog::updateleds(QString("R%1").arg(str));
-    qDebug() << str;
-    QString str2 = ui->lineEdit_2->text();
-    Dialog::updateleds(QString("B%1").arg(str2));
-    qDebug() << str2;
-    //QString str = "R" + ui->lineEdit->text() + "B" + ui->lineEdit_2->text();
-    //Dialog::updateleds(str);
-    //QMessageBox::information(this, "Title", str);
+
+    QString on = "R" + ui->lineEdit->text() + "B" + ui->lineEdit_2->text();
+    Dialog::updateleds(on);
+
 }
 
 
 void Dialog::on_pushButton_2_clicked()
 {
-    Dialog::updateleds("S");
+    QString off = "S";
+    Dialog::updateleds(off);
 
 }
-void Dialog::updateleds(QString command)
+void Dialog::updateleds(QString str)
 {
 
-    //QMessageBox::information(this, "Title", command.toStdString().c_str());
+    //QMessageBox::information(this, "info", str.toStdString().c_str());
 
     if(arduino->isWritable()){
-        arduino->write(command.toStdString().c_str());
+        arduino->write(str.toStdString().c_str());
     }
     else
     {
