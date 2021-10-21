@@ -24,7 +24,7 @@ void loop() {
   {
     message = Serial.readString();
     
-    if(message == "S")
+    if(message == 'S')
     {
       r_timer = 0;
       b_timer = 0;
