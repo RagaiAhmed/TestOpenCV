@@ -20,7 +20,7 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
   
 # setting threshold of gray image
-_, threshold = cv2.threshold(gray, 250, 100, cv2.THRESH_BINARY)
+_, threshold = cv2.threshold(gray, 230, 250, cv2.THRESH_BINARY)
   
 # using a findContours() function
 contours, _ = cv2.findContours(
