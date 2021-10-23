@@ -34,6 +34,10 @@ between the GUI and an Arduino board
 and outputs 3 shape detected images.
 - when the 'detect color.py' script is run it will loop over 3 images in the 'Examples/color detection'
 and outputs 3 color detected images.
+- 'low_level_image_shape_detection.ipynb' is a notebook, it's a successful attempt 
+to get to see how the object detection works from the basics. Although it's not 
+as the main script duo to slow performance and there is a step not completed yet,
+You are encouraged to take a look.
 
 #### For Part Two (GUI & Arduino):
 - 'Task1GUI' folder is a qt5 project file, it can be opened in the qt creator
@@ -54,7 +58,7 @@ and establish the serial communication.
 ## References
 - numpy - [numpy.org](https://numpy.org/doc/1.21/user/index.html)
 - opencv - [opencv.org](https://docs.opencv.org/4.5.4/)
-
+- Sobel Operator - [Computerphile@youtube](https://www.youtube.com/watch?v=uihBwtPIBxM)
 ---
 
 ## License
