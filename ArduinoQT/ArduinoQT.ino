@@ -5,42 +5,40 @@ void setup() {
   pinMode(BLUE_LED, OUTPUT);
   Serial.begin(9600);
 }
-void blinkRed(int Rvalue)
+ char r="";
+void blink(int Rvalue,int Bvalue,char r)
 {
-  while (true) {
+  
+
     digitalWrite(RED_LED, HIGH);
     delay(Rvalue);
     digitalWrite(RED_LED, LOW);
     delay(Rvalue);
-  }
-
-}
-void blinkBlue(int Bvalue)
-{
-  while (true) {
     digitalWrite(BLUE_LED, HIGH);
     delay(Bvalue);
     digitalWrite(BLUE_LED, LOW);
     delay(Bvalue);
-  }
-
+  
 }
+
 int rValue;
 int bValue;
+
 void loop() {
   if (Serial.available()) {
-    char r = Serial.read();
+     r = Serial.read();
     rValue = Serial.parseInt();
     char b = Serial.read();
     bValue = Serial.parseInt();
-    if(r!='S'){
-      blinkRed(rValue);
-      blinkBlue(bValue);
+  }
+    if(r=='R' || r=='B'){
+      blink(rValue,bValue,r);
+      
   }
   else{
     digitalWrite(BLUE_LED, LOW);
     digitalWrite(RED_LED, LOW);
   }
-}
+
 
 }
