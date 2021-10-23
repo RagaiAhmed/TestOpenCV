@@ -4,6 +4,7 @@ import numpy as np
 
 from matplotlib import pyplot as plt
   
+
 path = r'D:\opencv\test3.png'
 
 
@@ -17,10 +18,7 @@ img = cv2.resize(img1, (800, 600))
 # converting image into hsv image
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
-
   
-
-
 
 
 red_lower = np.array([0, 200, 200])
