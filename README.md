@@ -13,7 +13,7 @@
 *inside for loop that loop over the masks the contour start to countor each image of the masks and then another for loop start to loop over the contours and check inside it the coordinates of the contours of each single shape in order to print the name of the shape*
 ---
 *also we print the color of each shape as the color list is looped with the mask list*
----
+
 *we finally print the image with the shapes and colores*
 
   
