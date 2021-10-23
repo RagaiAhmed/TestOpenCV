@@ -48,7 +48,6 @@ to be connected to pins 9,10.
 - The GUI will automatically figure out which port the arduino board is connected to
 and establish the serial communication.
 
-[Back To The Top](#MIA Task1)
 
 ---
 
@@ -67,5 +66,4 @@ and establish the serial communication.
 - Twitter - [@eslamdyab21](https://twitter.com/EslamDyab10)
 - Email - [@Eslam Dyab](es-eslam.dyab2019@alexu.edu.eg)
 
-[Back To The Top](#MIA Task1)
 
