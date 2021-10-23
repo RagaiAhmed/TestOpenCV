@@ -36,15 +36,16 @@ The gui contains:
   5. setParity() which determines the parity bit which is NOParity in our case.
   6. setStopBits()  which determines the stop bits 1 or 2 which is OneStop in our case.
   7. setFlowControl() which determines the method in which a serial device controls the amount of data being transmitted to itself which is NoFlowControl in our case.
-### on_pushButton_clicked function
+#### on_pushButton_clicked function
 this function works when the ON button is pressed.
 it store the text in both lineEdit 1 and 2 in two variables called red and blue  in a result varible
 then it concatinate them in a "R+red+B+blue" formate 
 then it call the function sendMESSAGE() which takes the result.
-### on_pushButton_2_clicked function
+#### on_pushButton_2_clicked function
 this function works when the Off button is pressed.
 it call sendMESSAGE() function which takes "S" as a parameter.
-### sendMESSAGE(result) function
+#### sendMESSAGE(result) function
 this function checks if the arduino is Writable and write the result on it after converting it fron Qstring to stdString.
+
 
  
