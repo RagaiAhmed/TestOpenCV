@@ -14,10 +14,7 @@ img = cv2.resize(img1, (800, 600))
 
 
 
-# converting image into grayscale image
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-  
-
+# converting image into hsv image
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
 
