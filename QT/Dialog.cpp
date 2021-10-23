@@ -71,6 +71,13 @@ void MainWindow::on_off_clicked()
     qDebug() << val;
 }
 
+void MainWindow::on_Blink_all_clicked()
+{
+    val = 'R' + ui->red->text() + 'B' + ui->blue->text();
+    MainWindow::Blink(val);
+    qDebug() << val;
+}
+
 
 void MainWindow::Blink(QString command)
 {

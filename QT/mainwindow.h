@@ -27,6 +27,8 @@ private slots:
 
     void on_off_clicked();
 
+    void on_Blink_all_clicked();
+
 private:
     Ui::MainWindow *ui;
     QSerialPort *arduino;

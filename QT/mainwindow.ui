@@ -79,6 +79,19 @@
      <string>Turn off</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="Blink_all">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>320</y>
+      <width>251</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Blink All</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
