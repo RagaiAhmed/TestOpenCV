@@ -42,7 +42,7 @@ The purpose of this code is to use `UART` communication protocole of arduino boa
 
 ## Serial
 
-The purpose of this code is to use `UART` communication protocole between a Computer device and an Arduino Uno board to control the blinking of two leds (for arduino code go to [arduino.ino](#arduino)).
+The purpose of this code is to use `UART` communication protocole between a Computer device and an Arduino Uno board to control the blinking of two leds (for arduino code go to [arduino.ino](/arduino/arduino.ino)).
 
 ### Usage
 - You have to connect to the Arduino board using serial port and the GUI will pick it automatically
