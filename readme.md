@@ -6,7 +6,7 @@
 - [arduino.ino](#arduino)
 - [Serial](#serial)
 
-## [CV](CV.py)
+## [CV](/CV.py)
 
 The purpose of this code is to detect the shape and the color of each of the geometric shapes inside an image.
 
