@@ -6,7 +6,7 @@
 - [arduino.ino](#arduino)
 - [Serial](#serial)
 
-## CV
+## [CV](CV.py)
 
 The purpose of this code is to detect the shape and the color of each of the geometric shapes inside an image.
 
@@ -20,7 +20,7 @@ This code is not capable of detecting all colors or geometric shapes so you have
 
 ---
 
-## Arduino
+## [Arduino](/arduino/arduino.ino)
 
 The purpose of this code is to use `UART` communication protocole of arduino board to control the blinking of two leds.
 
@@ -40,7 +40,7 @@ The purpose of this code is to use `UART` communication protocole of arduino boa
 
 ---
 
-## Serial
+## [Serial](/Serial)
 
 The purpose of this code is to use `UART` communication protocole between a Computer device and an Arduino Uno board to control the blinking of two leds (for arduino code go to [arduino.ino](/arduino/arduino.ino)).
 
