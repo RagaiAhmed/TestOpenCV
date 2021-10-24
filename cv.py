@@ -1,12 +1,20 @@
 import cv2 as cv
 import numpy as np
 
+
+# Detecting colors
+
+# laod image
 img = cv.imread('Examples/test3.png')
 img = cv.resize(img, (600, 600), interpolation=cv.INTER_CUBIC)
 
+# convert image to grayscale
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+
+# convert image to hsv
 hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)
 
+# configuring hsv for the colors in the image
 red_lower = np.array([0, 70, 50], np.uint8)
 red_upper = np.array([10, 255, 255], np.uint8)
 red_mask = cv.inRange(hsv, red_lower, red_upper)
@@ -39,6 +47,7 @@ res_yellow = cv.bitwise_and(img, img, mask = yellow_mask)
 
 _, thresh = cv.threshold(gray, 250, 255, cv.CHAIN_APPROX_NONE)
 
+# writing the color of the shape
 contours, _ = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
 
 red_contours, _ = cv.findContours(red_mask, cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
@@ -70,6 +79,10 @@ for _, c in enumerate(yellow_contours):
 
     x, y, w, h = cv.boundingRect(c)
     cv.putText(img, "Yellow", (x, y), cv.FONT_HERSHEY_TRIPLEX, 0.5, (0, 255, 255))
+
+
+
+# Detecting the shapes
 
 # remove borders
 for i in range(len(contours)-1, 0, -1):
