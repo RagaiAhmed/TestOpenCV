@@ -46,7 +46,7 @@ this function works when the Off button is pressed.
 it call sendMESSAGE() function which takes "S" as a parameter.
 #### sendMESSAGE(result) function
 this function checks if the arduino is Writable and write the result on it after converting it fron Qstring to stdString.
-#Arduino Code
+# Arduino Code
 * this code we define REd and Blue led to 7, 8 pins as an output
 * it has a function called blink which take the RValue, BValue which comes form the serialport, it also takes r (which is the fisrt letter sent by the serial)
 ### loop function
